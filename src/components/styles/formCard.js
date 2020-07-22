@@ -50,7 +50,7 @@ export const stylesForm = makeStyles((theme) => ({
       '& button': {
         padding: "15px",
         marginLeft: "10px",
-        minWidth: "110px",
+        minWidth: "150px",
       },
     },
 }));

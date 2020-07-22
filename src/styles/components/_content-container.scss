@@ -8,3 +8,16 @@
   margin: 0 auto;
   padding: 0 $m-size;
 }
+
+.content__show-sm {
+    @media (min-width: 642px) {
+        display: none;
+    }
+}
+
+.content__show-md {
+    display: block;
+    @media (max-width: 642px) {
+        display: none;
+    }
+}

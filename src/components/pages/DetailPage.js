@@ -18,14 +18,13 @@ import { history } from '../../routers/AppRouter';
 import { formatNumberPtBr } from '../../filters/formatNumberBr';
 
 /* Styles */
-import { useStyles } from '../styles/detailCard';
+import { listCardStyles } from '../styles/listCards';
 
 const DetailPage = () => {
-    const classes = useStyles();
+    const classes = listCardStyles();
     const { country } = useParams();
     const [selectedCountry, setSelectedCountry] = useState(null);
     const listCountriesRedux = useSelector(state => state.countries);
-    console.log('listCountriesRedux', listCountriesRedux);
 
     useEffect(() => {
         /* Garante que só será realizada uma request para popular o storage */        
@@ -34,10 +33,8 @@ const DetailPage = () => {
         }
 
         if(country !== null){
-            console.log("country", country);
 
             let countrySelected = listCountriesRedux.filter((countryList) => countryList.alpha3Code === country);
-            console.log("countrySelected", countrySelected);
 
             if(countrySelected.length === 0){
                 toast.success("Selecione um país da lista inicial para visualizar os detalhes...");
@@ -61,19 +58,24 @@ const DetailPage = () => {
                 <>
                 <Container className={classes.cardGrid} maxWidth="md">                    
                     <div className="home__search-middle">
-                        <h5 className="">
-                            <Link className="" to={`/`}>Home </Link>
-                            
-                            <strong> / Detalhes </strong>
-                        </h5>
+                        <div className="breadcrumbs">
+                            <span className="breadcrumbs-link">
+                                <Link to={`/`}>Home </Link>
+                            </span>
+                            <span className="breadcrumbs-text">
+                                <strong> / Edição </strong>
+                            </span>
+                        </div>
                         <h1 className="home__title-search">Detalhes do país: {selectedCountry.nativeName} </h1>
+                        <hr />
                     </div>
                     <Card className={classes.root}>
-                        <CardMedia
+                        <img src ={selectedCountry.flag.svgFile} className="edit-page__image" alt={`selectedCountry.name`}/>
+                        {/* <CardMedia
                             className={classes.cover}
                             image={selectedCountry.flag.svgFile}
                             title={selectedCountry.name}
-                        />
+                        /> */}
 
                         <div className={classes.details}>
                             <CardContent className={classes.content}>

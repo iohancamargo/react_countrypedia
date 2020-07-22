@@ -56,12 +56,9 @@ const HomePage = () => {
                     filtredArr.push(country);
                 }
             });
-            console.log('filtredArr', filtredArr);
             setListCountries(filtredArr);
-            console.log('listCountries', listCountries);
         } else {
             setListCountries(listCountriesRedux);
-            console.log('listCountries else', listCountries);
         }
     }
 
@@ -179,7 +176,7 @@ const HomePage = () => {
                                     <CardMedia 
                                         className={classes.cardMedia}
                                         image={country.flag.svgFile}
-                                        title="Image title"
+                                        title={country.name}
                                     />
                                     <CardContent className={classes.cardContent}>
                                         <Typography gutterBottom variant="h5" component="h2">

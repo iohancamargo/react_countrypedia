@@ -36,7 +36,6 @@ const EditPage = () => {
     const classesForm = stylesForm();
     const [selectedCountry, setSelectedCountry] = useState(null);
     const listCountriesRedux = useSelector(state => state.countries);
-    console.log('listCountriesRedux', listCountriesRedux);
 
     const [area, setArea] = useState(0);
     const [name, setName] = useState("");
@@ -50,10 +49,8 @@ const EditPage = () => {
         }
 
         if(country !== null){
-            console.log("country", country);
 
             let countrySelected = listCountriesRedux.filter((countryList) => countryList.alpha3Code === country);
-            console.log("countrySelected", countrySelected);
 
             if(countrySelected.length === 0){
                 toast.success("Selecione um país da lista inicial para visualizar os detalhes...");
@@ -73,7 +70,6 @@ const EditPage = () => {
     const handleCancel = (e) => {
         e.preventDefault();
         history.push(`/`);
-        console.log('entrou no cancel');
     }
 
     function editCountry(countryData) {
@@ -113,10 +109,14 @@ const EditPage = () => {
             <>
                 <Container className={classes.cardGrid} maxWidth="md">
                     <div className="home__search-middle">
-                        <h5 className="">
-                            <Link className="" to={`/`}>Home </Link>
-                            <strong> / Edição </strong>
-                        </h5>
+                        <div className="breadcrumbs">
+                            <span className="breadcrumbs-link">
+                                <Link to={`/`}>Home </Link>
+                            </span>
+                            <span className="breadcrumbs-text">
+                                <strong> / Detalhes </strong>
+                            </span>
+                        </div>
                         <h1 className="home__title-search">Altere informações dos países</h1>
                     </div>
                     <Grid item key={selectedCountry.alpha3Code} xs={12} sm={12} md={12}>

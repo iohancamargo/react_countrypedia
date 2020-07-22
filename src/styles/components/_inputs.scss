@@ -1,16 +1,36 @@
-.text-input {
-  border: 1px solid #cacccd;
-  height: 50px;
-  font-size: $font-size-large;
-  font-weight: 300;
-  padding: $s-size;
+.breadcrumbs {
+    margin-top: 25px;
 }
 
-.select {
-  @extend .text-input;
+.breadcrumbs-link {
+    a {
+        padding: 5px;
+        color: #3a3a3acc;
+        text-decoration: none;
+    }
+    a:hover {
+        padding: 5px;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color:#3a3a3acc;
+    }
 }
 
-.textarea {
-  @extend .text-input;
-  height: 10rem;
+.breadcrumbs-text{
+    padding: 5px;
+    color: #3a3a3a9e;
+    text-decoration: none;
+}
+
+.like-line{
+    display: list-item;
+    list-style: none;
+}
+.aling_left{
+    float: left;
+}
+
+.aling_right{
+    float: right;
 }
