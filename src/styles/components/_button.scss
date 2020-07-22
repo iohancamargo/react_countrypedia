@@ -1,0 +1,38 @@
+.button {
+    background: #FF6A17;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: $font-size-large;
+    font-weight: 300;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
+    border-radius: 45px;
+    width: 85%;
+}
+
+.button--link {
+    background: none;
+}
+
+.button--secondary {
+    background: #888;
+}
+
+.button-marg-lef{
+    margin-left: 5px !important;
+}
+
+.button-min-width{
+    min-width: 110px !important;
+}
+
+.button-new-list {
+    margin-bottom: 15px;
+}
+
+.button-form {
+    padding: 15px;
+    margin-left: 10px;
+}
