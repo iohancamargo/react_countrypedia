@@ -6,7 +6,6 @@ import React, { useState, useEffect } from "react";
 
 /* Material ui components */
 import { Card, 
-        CardMedia,
         Container,
         Typography,
         CardContent
@@ -71,12 +70,6 @@ const DetailPage = () => {
                     </div>
                     <Card className={classes.root}>
                         <img src ={selectedCountry.flag.svgFile} className="edit-page__image" alt={`selectedCountry.name`}/>
-                        {/* <CardMedia
-                            className={classes.cover}
-                            image={selectedCountry.flag.svgFile}
-                            title={selectedCountry.name}
-                        /> */}
-
                         <div className={classes.details}>
                             <CardContent className={classes.content}>
 

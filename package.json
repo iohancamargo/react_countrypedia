@@ -1,7 +1,7 @@
 {
 	"author": "Iohan Camargo",
 	"name": "Countrypedia",
-	"homepage" : "https://github.com/iohancamargo/react_country_pedia",
+	"homepage": "https://github.com/iohancamargo/react_country_pedia",
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {

@@ -62,6 +62,12 @@ const HomePage = () => {
         }
     }
 
+    const handleKeyPress = (tecla, value) => {
+        if(tecla === 13 || tecla === 27) {
+            handleFilterCountries(value);
+        }
+    }
+
     useEffect(() => {
         /* Garante que só será realizada uma request para popular o storage */        
         if (listCountriesRedux.length === 0) {
@@ -120,9 +126,10 @@ const HomePage = () => {
                                             <TextField
                                                 variant="outlined"
                                                 id="searchCountryFilter"
-                                                label="Procure por um país"
+                                                label="Procure por um país e clique na lupa para pesquisar"
                                                 defaultValue={textFilter}
                                                 className="home__input-search"
+                                                onKeyDown={ (e) => handleKeyPress(e.keyCode, e.target.value)}
                                                 onBlur={(e) => handleFilterCountries(e.target.value)}
                                                 InputProps={{
                                                     endAdornment: (
@@ -154,9 +161,10 @@ const HomePage = () => {
                                 <TextField
                                     variant="outlined"
                                     id="searchCountry"
-                                    label="Procure por um país"
+                                    label="Procure por um país e clique na lupa para pesquisar"
                                     defaultValue={textFilter}
                                     className="home__input-search"
+                                    onKeyDown={ (e) => handleKeyPress(e.keyCode, e.target.value)}
                                     onBlur={(e) => handleFilterCountries(e.target.value)}
                                     InputProps={{
                                         endAdornment: (
